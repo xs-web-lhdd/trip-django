@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     # 系统模块:
     "system.apps.SystemConfig",
     # 景点模块:
-    "sight.apps.SightConfig"
+    "sight.apps.SightConfig",
+    # 用户模块
+    "accounts.apps.AccountsConfig"
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 指定自定义的用户模型
+AUTH_USER_MODEL = 'accounts.User'

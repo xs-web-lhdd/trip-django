@@ -1,4 +1,4 @@
-# 慕旅游网的接口文档
+# 项目的接口文档
 RESTful风格接口。
 * 200 请求数据成功
 * 201 提交数据成功
@@ -91,3 +91,8 @@ http://test.xxx.com/
 * [1.1 轮播图接口](./system/slider_list.md)
 
 ### 2. 景点模块
+* [2.1 景点列表接口](./sight/sight_list.md)
+* [2.2 景点详情接口](./sight/signt_detail.md)
+* [2.3 景点介绍接口](./sight/sight_info.md)
+* [2.4 景点下评论列表接口](./sight/sight_comment.md)
+* [2.5 景点下门票接口](./sight/sight_ticket.md)

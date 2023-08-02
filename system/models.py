@@ -1,5 +1,8 @@
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 
+from accounts.models import User
 from utils.models import CommonModel
 
 
@@ -19,3 +22,19 @@ class Slider(CommonModel):
         db_table = 'system_slider'
         ordering = ['-reorder']
 
+
+class ImageRelated(CommonModel):
+    """ 图片关联 """
+    img = models.ImageField('图片', upload_to='%Y%m/file/', max_length=256)  # 头像上传到 /年月/file 文件夹里面去
+    summary = models.CharField('图片说明', max_length=32, null=True, blank=True)
+    user = models.ForeignKey(User,
+                             on_delete=models.SET(None),
+                             related_name='upload_images',
+                             verbose_name='上传的用户',
+                             null=True)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.IntegerField('关联的模型')
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    class Meta:
+        db_table = 'system_image_related'
