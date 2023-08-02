@@ -23,4 +23,6 @@ urlpatterns = [
     path('system/', include('system.urls')),
     # 景点模块
     path('sight/', include('sight.urls')),
+    # 用户账户模块
+    path('accounts/', include('accounts.urls')),
 ]
