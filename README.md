@@ -1,3 +1,18 @@
+# Vue 前端：
+## 安装依赖
+```
+npm install
+```
+## 项目启动
+```
+npm run serve
+```
+<br/>注意：本地 node 版本，开发时本机 node 版本为 16.15.1
+## 项目打包
+```
+npm run build
+```
+
 # Django 后端项目：
 ## 项目前置信息
 - 项目创建：`django-admin startapp trip`
