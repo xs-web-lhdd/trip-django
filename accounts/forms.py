@@ -43,19 +43,21 @@ class LoginForm(forms.Form):
             return
         username = data.get('username', None)
         password = data.get('password', None)
+        # 对用户进行验证
         user = authenticate(username=username, password=password)
         if user is None:
             raise forms.ValidationError('用户名或者是密码不正确')
         else:
             if not user.is_active:
                 raise forms.ValidationError('该用户已经被禁用')
+        # 将用户设置到 user 属性上面
         self.user = user
         return data
 
     def do_login(self, request):
         """ 执行用户登录 """
         user = self.user
-        # 调用登录
+        # 调用登录 调用 django 中内置 login 函数进行登陆
         login(request, user)
         # 修改最后登录的时间
         user.last_login = now()

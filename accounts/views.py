@@ -73,6 +73,7 @@ def user_api_login(request):
 
 def user_api_logout(request):
     """ 用户退出接口 """
+    # 调用 django 内置 logout 函数进行退出登陆
     logout(request)
     return http.HttpResponse(status=201)
 

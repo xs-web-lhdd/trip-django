@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     # 景点模块:
     "sight.apps.SightConfig",
     # 用户模块
-    "accounts.apps.AccountsConfig"
+    "accounts.apps.AccountsConfig",
+    # 订单模块
+    "order.apps.OrderConfig"
 ]
 
 MIDDLEWARE = [
