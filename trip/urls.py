@@ -25,4 +25,6 @@ urlpatterns = [
     path('sight/', include('sight.urls')),
     # 用户账户模块
     path('accounts/', include('accounts.urls')),
+    # 订单模块
+    path('order/', include('order.urls')),
 ]
